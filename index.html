@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Redirecting...</title>
     <script>
-      // Step 1: Redirect to /home
-      window.location.replace("/home");
+  // Step 1: Redirect to /v3
+  window.location.replace("/v3");
 
-      // Step 2 (after arriving on /home/), this code in /home/index.html will remove slash
-      if (location.pathname.endsWith("/")) {
-        const cleanURL = location.pathname.slice(0, -1) + location.search + location.hash;
-        history.replaceState(null, "", cleanURL);
-      }
-    </script>
+  // Step 2: Agar URL trailing slash ke sath aaye, to hatao
+  if (location.pathname.endsWith("/")) {
+    const cleanURL = location.pathname.slice(0, -1) + location.search + location.hash;
+    history.replaceState(null, "", cleanURL);
+  }
+</script>
   </head>
-  <body>
-    <p>Redirecting to <a href="/home">/home</a>...</p>
-  </body>
 </html>
