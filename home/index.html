@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta content='C966E4B77D5F39EA481D9EB465C71935' name='msvalidate.01'/>
+<script>
+  if (location.pathname.endsWith("/")) {
+    const cleanURL = location.pathname.slice(0, -1) + location.search + location.hash;
+    history.replaceState(null, "", cleanURL);
+  }
+</script>
+  <meta name="msvalidate.01" content="38BF6E2F370FE724B5A8EB854E814822" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
