@@ -3,7 +3,14 @@
   <head>
     <title>Redirecting...</title>
     <script>
-      window.location.href = "/home"; // Will go to /home, but server must not add slash
+      // Step 1: Redirect to /home
+      window.location.replace("/home");
+
+      // Step 2 (after arriving on /home/), this code in /home/index.html will remove slash
+      if (location.pathname.endsWith("/")) {
+        const cleanURL = location.pathname.slice(0, -1) + location.search + location.hash;
+        history.replaceState(null, "", cleanURL);
+      }
     </script>
   </head>
   <body>
